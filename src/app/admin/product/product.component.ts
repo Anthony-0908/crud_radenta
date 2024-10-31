@@ -1,7 +1,6 @@
 import { ProductService } from './../../service/product.service';
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../core/model/product';
-
+import { Product } from '../../shared/core/model/product';
 @Component({
   selector: 'app-product',
   standalone: true,
@@ -19,7 +18,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.loadProducts();
 
-    this.createProduct();
+    // this.createProduct();
   }
 
   loadProducts(): void {
