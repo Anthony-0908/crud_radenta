@@ -1,0 +1,16 @@
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between each field */
+
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+}
+
+.button-container button {
+  padding: 4px 16px; /* Optional: Smaller padding for a smaller button */
+  font-size: 0.875rem; /* Optional: Adjust font size for a smaller button look */
+}

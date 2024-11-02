@@ -4,18 +4,26 @@ import { AdminLayoutComponent } from '../admin-layout/admin-layout.component';
 // import { ProductComponent } from '../product/product.component';
 import {ProductComponent} from '../pages/product/product.component'
 
+import { FormComponent } from '../component/product/form/form.component';
 const routes: Routes = [
   {
-    path:'',
-    component:AdminLayoutComponent,
-    children:[
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
       {
-        path:'products',
-        component:ProductComponent,
+        path: 'products',
+        component: ProductComponent,
+        children: [
+          {
+            path: 'create',
+            component: FormComponent,
+          }
+        ]
       },
     ]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

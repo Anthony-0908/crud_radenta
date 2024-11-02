@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 
@@ -12,7 +13,8 @@ import { ProductService } from '../../service/product.service';
   imports: [
     CommonModule,
     HttpClientModule,
-    AdminModuleRoutingModule
+    AdminModuleRoutingModule,
+  
   ],
 
   providers:[

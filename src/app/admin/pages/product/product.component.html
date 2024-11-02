@@ -1,1 +1,15 @@
-<p>product works!</p>
+<mat-toolbar color="primary">
+  <span>Product Management</span>
+</mat-toolbar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Product List</mat-card-title>
+    <a routerLink="create" mat-button color="primary">Create</a>
+
+  </mat-card-header>
+  <mat-card-content>
+    <app-table [dataSource]="dataSource" [displayedColumns]="['Name', 'Description', 'Category', 'Actions']"></app-table>
+    <router-outlet></router-outlet> <!-- This outlet will display FormComponent -->
+</mat-card-content>
+</mat-card>
