@@ -5,6 +5,7 @@ import { AdminLayoutComponent } from '../admin-layout/admin-layout.component';
 import {ProductComponent} from '../pages/product/product.component'
 
 import { FormComponent } from '../component/product/form/form.component';
+import { TableComponent } from '../component/product/table/table.component';
 const routes: Routes = [
   {
     path: '',
@@ -12,7 +13,7 @@ const routes: Routes = [
     children: [
       {
         path: 'products',
-        component: ProductComponent,
+        component: TableComponent,
         children: [
           {
             path: 'create',

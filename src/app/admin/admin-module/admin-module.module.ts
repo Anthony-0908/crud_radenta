@@ -14,7 +14,7 @@ import { ProductService } from '../../service/product.service';
     CommonModule,
     HttpClientModule,
     AdminModuleRoutingModule,
-  
+
   ],
 
   providers:[

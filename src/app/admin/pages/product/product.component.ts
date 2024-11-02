@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
+import { Router,NavigationEnd } from '@angular/router';
+
 import { TableComponent } from '../../component/product/table/table.component';
 import { FormComponent } from '../../component/product/form/form.component';
 import { Product } from '../../../shared/core/model/product';
 import { ProductService } from '../../../service/product.service';
 import { MaterialModule } from '../../../module/material/material.module';
 import { MatTableDataSource } from '@angular/material/table';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [TableComponent,FormComponent,MaterialModule,FormsModule,RouterOutlet, RouterModule],
+  imports: [TableComponent,FormComponent,MaterialModule,FormsModule,RouterOutlet,CommonModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
@@ -19,14 +22,30 @@ export class ProductComponent {
   dataSource = new MatTableDataSource<Product>();
   selectedProduct: Product | null = null; // For storing a single product
   newProduct: Omit<Product, 'id'> = { Name: '', Description: '', Category: '' }; // Adjust properties based on your Product model
-
-  constructor(private productService: ProductService) {}
+  showTable: boolean = true; // New property to control table visibility
+  constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadProducts();
 
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.showTable = !this.router.url.includes('/create'); // Hide table if on create route
+      }
+    });
+
     // this.createProduct();
   }
+
+
+
+
+  onCreateButtonClick(): void {
+    this.showTable = false; // Hide the table when create button is clicked
+    this.router.navigate(['products/create']);
+  }
+
+
 
   loadProducts(): void {
     this.productService.getProducts().subscribe((data: Product[]) => {

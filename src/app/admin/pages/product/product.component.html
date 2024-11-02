@@ -3,13 +3,17 @@
 </mat-toolbar>
 
 <mat-card>
+  <router-outlet></router-outlet>
+</mat-card>
+<!-- <mat-card>
   <mat-card-header>
     <mat-card-title>Product List</mat-card-title>
-    <a routerLink="create" mat-button color="primary">Create</a>
-
+    <button mat-button color="primary" (click)="onCreateButtonClick()">Create</button>
   </mat-card-header>
   <mat-card-content>
-    <app-table [dataSource]="dataSource" [displayedColumns]="['Name', 'Description', 'Category', 'Actions']"></app-table>
-    <router-outlet></router-outlet> <!-- This outlet will display FormComponent -->
-</mat-card-content>
-</mat-card>
+    <ng-container *ngIf="showTable">
+      <app-table [dataSource]="dataSource" [displayedColumns]="['Name', 'Description', 'Category', 'Actions']"></app-table>
+    </ng-container>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card> -->
