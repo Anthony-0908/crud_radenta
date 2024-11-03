@@ -14,8 +14,10 @@ export class FormComponent {
 
   newProduct =  {Name:'', Description:'', Category:''};
 
-  onSubmit():void{
-    this.productCreated.emit(this.newProduct)
-    this.newProduct = {Name:'' , Description:'' , Category:'',};
-  }
+ onSubmit(): void {
+  console.log('Form submitted:', this.newProduct); // Verify data before emitting
+  this.productCreated.emit(this.newProduct);
+  this.newProduct = { Name: '', Description: '', Category: '' };
+}
+
 }

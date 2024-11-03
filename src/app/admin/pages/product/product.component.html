@@ -1,19 +1,12 @@
-<mat-toolbar color="primary">
-  <span>Product Management</span>
-</mat-toolbar>
-
 <mat-card>
-  <router-outlet></router-outlet>
-</mat-card>
-<!-- <mat-card>
   <mat-card-header>
     <mat-card-title>Product List</mat-card-title>
     <button mat-button color="primary" (click)="onCreateButtonClick()">Create</button>
   </mat-card-header>
   <mat-card-content>
     <ng-container *ngIf="showTable">
-      <app-table [dataSource]="dataSource" [displayedColumns]="['Name', 'Description', 'Category', 'Actions']"></app-table>
+      <app-table [dataSource]="dataSource" [displayedColumns]="['Name', 'Description', 'Category']"></app-table>
     </ng-container>
-    <router-outlet></router-outlet>
+    <!-- <router-outlet></router-outlet> -->
   </mat-card-content>
-</mat-card> -->
+</mat-card>

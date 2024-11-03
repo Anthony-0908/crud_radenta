@@ -35,11 +35,12 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  createProduct(): void {
-    this.productService.createProduct(this.newProduct).subscribe(
+  // Method to create product
+  createProduct(newProduct: { Name: string; Description: string; Category: string }): void {
+    this.productService.createProduct(newProduct).subscribe(
       (createdProduct: Product) => {
         this.products.push(createdProduct);
-        this.newProduct = { Name: 'sss', Description: 'aaa', Category: 'fff' }; // Reset after creation
+        this.newProduct = { Name: '', Description: '', Category: '' }; // Reset after creation
         console.log('Created product', createdProduct);
       },
       (error) => {

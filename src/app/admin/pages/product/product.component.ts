@@ -28,11 +28,11 @@ export class ProductComponent {
   ngOnInit(): void {
     this.loadProducts();
 
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.showTable = !this.router.url.includes('/create'); // Hide table if on create route
-      }
-    });
+    // this.router.events.subscribe(event => {
+    //   if (event instanceof NavigationEnd) {
+    //     this.showTable = !this.router.url.includes('/create'); // Hide table if on create route
+    //   }
+    // });
 
     // this.createProduct();
   }
@@ -46,15 +46,13 @@ export class ProductComponent {
   }
 
 
-
   loadProducts(): void {
     this.productService.getProducts().subscribe((data: Product[]) => {
       this.products = data;
-      this.dataSource.data = this.products;
       console.log('This is data', this.products);
+      this.dataSource.data = this.products; // Set the data for the data source
     });
   }
-
   loadProductById(id: string): void {
     this.productService.getProductById(id).subscribe((data: Product) => {
       this.selectedProduct = data;

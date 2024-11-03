@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { AdminModuleRoutingModule } from './admin-module-routing.module';
 import { AdminLayoutComponent } from '../admin-layout/admin-layout.component';
 import { ProductService } from '../../service/product.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,7 @@ import { ProductService } from '../../service/product.service';
     CommonModule,
     HttpClientModule,
     AdminModuleRoutingModule,
+    FormsModule,
 
   ],
 
