@@ -10,10 +10,11 @@ import { MatTableDataSource } from '@angular/material/table';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [TableComponent,FormComponent,MaterialModule,FormsModule,RouterOutlet,CommonModule],
+  imports: [TableComponent,FormComponent,MaterialModule,FormsModule,RouterOutlet,CommonModule,RouterModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
@@ -25,25 +26,32 @@ export class ProductComponent {
   showTable: boolean = true; // New property to control table visibility
   constructor(private productService: ProductService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.loadProducts();
+  // ngOnInit(): void {
+  //   this.loadProducts();
 
-    // this.router.events.subscribe(event => {
-    //   if (event instanceof NavigationEnd) {
-    //     this.showTable = !this.router.url.includes('/create'); // Hide table if on create route
-    //   }
-    // });
+  //   // this.router.events.subscribe(event => {
+  //   //   if (event instanceof NavigationEnd) {
+  //   //     this.showTable = !this.router.url.includes('/create'); // Hide table if on create route
+  //   //   }
+  //   // });
 
-    // this.createProduct();
-  }
+  //   // this.createProduct();
+
+  //    // Listen to route changes to control table visibility
+  //    this.router.events.subscribe(event => {
+  //     if (event instanceof NavigationEnd) {
+  //       this.showTable = !this.router.url.includes('/create');
+  //     }
+  //   });
+  // }
 
 
 
 
-  onCreateButtonClick(): void {
-    this.showTable = false; // Hide the table when create button is clicked
-    this.router.navigate(['products/create']);
-  }
+  // onCreateButtonClick(): void {
+  //   this.showTable = false; // Hide the table when create button is clicked
+  //   this.router.navigate(['products/create']);
+  // }
 
 
   loadProducts(): void {

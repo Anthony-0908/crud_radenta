@@ -1,12 +1,13 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>Product List</mat-card-title>
-    <button mat-button color="primary" (click)="onCreateButtonClick()">Create</button>
+    <a routerLink="create">Create</a>
+    <!-- <button mat-button color="primary" (click)="onCreateButtonClick()">Create</button> -->
   </mat-card-header>
   <mat-card-content>
-    <ng-container *ngIf="showTable">
+    <!-- <ng-container *ngIf="showTable">
       <app-table [dataSource]="dataSource" [displayedColumns]="['Name', 'Description', 'Category']"></app-table>
-    </ng-container>
-    <!-- <router-outlet></router-outlet> -->
+    </ng-container> -->
+    <router-outlet></router-outlet>
   </mat-card-content>
 </mat-card>
