@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Router,NavigationEnd } from '@angular/router';
 
@@ -22,7 +23,7 @@ export class ProductComponent {
   products: Product[] = [];
   dataSource = new MatTableDataSource<Product>();
   selectedProduct: Product | null = null; // For storing a single product
-  newProduct: Omit<Product, 'id'> = { Name: '', Description: '', Category: '' }; // Adjust properties based on your Product model
+  // newProduct: Omit<Product, 'id'> = { Name: '', Description: '', Category: '' }; // Adjust properties based on your Product model
   showTable: boolean = true; // New property to control table visibility
   constructor(private productService: ProductService, private router: Router) {}
 
@@ -68,7 +69,7 @@ export class ProductComponent {
     });
   }
 
-  onProductCreate(productData:{Name:string; Description:string; Category:string}) : void {
+  onProductCreate(productData:{ProductName:string; ProductDescription:string; ProductCategory:string}) : void {
     this.productService.createProduct(productData).subscribe(
       (createdProduct:Product) => {
         this.products.push(createdProduct);

@@ -1,6 +1,6 @@
 export interface Product {
-
-  Name:string
-  Description:string
-  Category:string
+  
+  ProductName:string
+  ProductDescription:string
+  ProductCategory:string
 }

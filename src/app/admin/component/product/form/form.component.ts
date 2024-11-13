@@ -1,23 +1,43 @@
+import { Product } from './../../../../shared/core/model/product';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MaterialModule } from '../../../../module/material/material.module';
+import { ProductService } from '../../../../service/product.service';
 import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [MaterialModule,FormsModule],
+  imports: [MaterialModule, FormsModule],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.css'
+  styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-  @Output() productCreated = new EventEmitter<{Name:string; Description:string; Category:string}>();
 
+  constructor(private productService: ProductService) {}
 
-  newProduct =  {Name:'', Description:'', Category:''};
+  products: Product[] = [];
 
- onSubmit(): void {
-  console.log('Form submitted:', this.newProduct); // Verify data before emitting
-  this.productCreated.emit(this.newProduct);
-  this.newProduct = { Name: '', Description: '', Category: '' };
-}
+  @Output() productCreated = new EventEmitter<Product>();
 
+  // Ensure `newProduct` uses the correct properties
+  newProduct: Product = { ProductName: '', ProductDescription: '', ProductCategory: '' };
+
+  createproduct(): void {
+    this.productService.createProduct(this.newProduct).subscribe(
+      (createdProduct: Product) => {
+        console.log('Created product:', createdProduct);
+        this.newProduct = { ProductName: '', ProductDescription: '', ProductCategory: '' }; // Reset form fields
+        this.productCreated.emit(createdProduct); // Emit the created product
+      },
+      (error) => {
+        console.error('Error creating product:', error);
+        alert('Failed to create product. Please check the console for details.');
+      }
+    );
+  }
+
+  onSubmit(): void {
+    console.log('Form submitted:', this.newProduct);
+    this.createproduct();  // Call `createProduct` to send data to the backend
+  }
 }
