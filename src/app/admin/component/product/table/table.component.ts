@@ -39,4 +39,25 @@ export class TableComponent implements OnInit {
     this.dataSource.sort = this.sort; // Set the sorting
     this.dataSource.paginator = this.paginator; // Set the paginator
   }
+
+
+  editProduct(products:Product):void {
+
+  }
+
+ deleteProduct(id: string): void {
+  console.log(`Attempting to delete product with ID: ${id}`);
+  if (confirm('Are you sure you want to delete this product?')) {
+    this.productService.deleteProduct(id).subscribe(() => {
+      this.products = this.products.filter(product => product.id !== id);
+      this.dataSource.data = this.products;
+      console.log(`Product with ID ${id} deleted successfully.`);
+    }, (error) => {
+      console.error(`Error deleting product with ID ${id}:`, error);
+      alert('Failed to delete product.');
+    });
+  }
+}
+
+
 }

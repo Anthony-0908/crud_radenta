@@ -27,33 +27,6 @@ export class ProductComponent {
   showTable: boolean = true; // New property to control table visibility
   constructor(private productService: ProductService, private router: Router) {}
 
-  // ngOnInit(): void {
-  //   this.loadProducts();
-
-  //   // this.router.events.subscribe(event => {
-  //   //   if (event instanceof NavigationEnd) {
-  //   //     this.showTable = !this.router.url.includes('/create'); // Hide table if on create route
-  //   //   }
-  //   // });
-
-  //   // this.createProduct();
-
-  //    // Listen to route changes to control table visibility
-  //    this.router.events.subscribe(event => {
-  //     if (event instanceof NavigationEnd) {
-  //       this.showTable = !this.router.url.includes('/create');
-  //     }
-  //   });
-  // }
-
-
-
-
-  // onCreateButtonClick(): void {
-  //   this.showTable = false; // Hide the table when create button is clicked
-  //   this.router.navigate(['products/create']);
-  // }
-
 
   loadProducts(): void {
     this.productService.getProducts().subscribe((data: Product[]) => {
@@ -69,33 +42,6 @@ export class ProductComponent {
     });
   }
 
-  onProductCreate(productData:{ProductName:string; ProductDescription:string; ProductCategory:string}) : void {
-    this.productService.createProduct(productData).subscribe(
-      (createdProduct:Product) => {
-        this.products.push(createdProduct);
-        this.dataSource.data = this.products
-      },
-      (error) => {
-        console.log('Error creating product' , error)
-        alert('Failed to create product')
-      }
-    )
-  }
-  // createProduct(): void {
-  //   this.productService.createProduct(this.newProduct).subscribe(
-  //     (createdProduct: Product) => {
-  //       this.products.push(createdProduct);
-  //       this.newProduct = { Name: '', Description: '', Category: '' }; // Reset after creation
-  //       console.log('Created product', createdProduct);
-  //     },
-  //     (error) => {
-  //       console.error('Error creating product:', error);
-  //       alert('Failed to create product. Please check the console for details.');
-  //     }
-  //   );
-  // }
-
-
 
   editProduct(product: Product): void {
     // Logic for editing the product
@@ -103,17 +49,4 @@ export class ProductComponent {
     // Here, you might want to open a dialog or navigate to an edit page
   }
 
-  // deleteProduct(productId: string): void {
-  //   // Logic for deleting the product
-  //   this.productService.deleteProduct(productId).subscribe(
-  //     () => {
-  //       // Remove the deleted product from the data source
-  //       this.products = this.products.filter(product => product.id !== productId);
-  //       this.dataSource.data = this.products; // Update data source
-  //       console.log('Deleted product with ID:', productId);
-  //     },
-  //     error => {
-  //       console.error('Error deleting product:', error);
-  //     }
-  //   );
 }

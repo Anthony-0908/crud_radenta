@@ -19,7 +19,7 @@ export class FormComponent {
 
   @Output() productCreated = new EventEmitter<Product>();
 
-  // Ensure `newProduct` uses the correct properties
+
   newProduct: Product = { ProductName: '', ProductDescription: '', ProductCategory: '' };
 
   createproduct(): void {
@@ -28,6 +28,8 @@ export class FormComponent {
         console.log('Created product:', createdProduct);
         this.newProduct = { ProductName: '', ProductDescription: '', ProductCategory: '' }; // Reset form fields
         this.productCreated.emit(createdProduct); // Emit the created product
+
+        console.log('product created');
       },
       (error) => {
         console.error('Error creating product:', error);
@@ -37,7 +39,7 @@ export class FormComponent {
   }
 
   onSubmit(): void {
-    console.log('Form submitted:', this.newProduct);
-    this.createproduct();  // Call `createProduct` to send data to the backend
+
+    this.createproduct();
   }
 }
