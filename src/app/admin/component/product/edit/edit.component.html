@@ -1,0 +1,27 @@
+<div class="p-6 bg-white rounded-lg shadow-lg">
+  <h2 class="text-lg font-semibold text-gray-800">Edit Product</h2>
+
+  <!-- Product Name -->
+  <mat-form-field class="w-full">
+    <mat-label>Product Name</mat-label>
+    <input matInput [(ngModel)]="product.ProductName" placeholder="Product Name" />
+  </mat-form-field>
+
+  <!-- Product Description -->
+  <mat-form-field class="w-full">
+    <mat-label>Product Description</mat-label>
+    <textarea matInput rows="3" [(ngModel)]="product.ProductDescription" placeholder="Product Desscription "></textarea>
+  </mat-form-field>
+
+  <!-- Product Category -->
+  <mat-form-field class="w-full">
+    <mat-label>Product Category</mat-label>
+    <input matInput [(ngModel)]="product.ProductCategory" placeholder="Product Category"/>
+  </mat-form-field>
+
+  <!-- Actions -->
+  <div class="mt-6 flex justify-end space-x-4">
+    <button mat-button (click)="closeModal()" class="text-gray-700">Cancel</button>
+    <button mat-raised-button color="primary" (click)="saveChanges()">Save</button>
+  </div>
+</div>
