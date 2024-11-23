@@ -9,6 +9,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NgModule } from '@angular/core';
     MatPaginatorModule,
     MatToolbarModule,
     MatGridListModule,
+    MatSidenavModule,
   ],
   exports: [
     MatButtonModule,
@@ -34,7 +36,8 @@ import { NgModule } from '@angular/core';
     MatSnackBarModule,
     MatPaginatorModule,
     MatToolbarModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSidenavModule
   ],
 })
 export class MaterialModule { }

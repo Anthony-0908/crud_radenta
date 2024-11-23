@@ -1,10 +1,14 @@
+import { MaterialModule } from './../../module/material/material.module';
 import { Component } from '@angular/core';
+
 import { RouterOutlet } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-admin-layout',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,MaterialModule],
   templateUrl: './admin-layout.component.html',
   styleUrl: './admin-layout.component.css'
 })
