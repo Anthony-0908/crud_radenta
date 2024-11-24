@@ -2,12 +2,14 @@
 
   <!-- Header -->
   <mat-toolbar class="bg-blue-600 text-white">
-
+    <app-header></app-header>
   </mat-toolbar>
 
   <div class="flex flex-1">
-    <mat-sidenav-container>
-      <!-- Content -->
+    <mat-sidenav-container class="w-64 bg-gray-100">
+      <mat-sidenav mode="side" opened class="h-full">
+        <app-side-navbar></app-side-navbar>
+      </mat-sidenav>
     </mat-sidenav-container>
 
 <!--
@@ -21,7 +23,7 @@
 </div>
   <!-- Footer -->
   <mat-toolbar class="bg-gray-700 text-white justify-center">
-
+    <app-footer></app-footer>
   </mat-toolbar>
 </div>
 
