@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    "./src/**/*.{html,ts}", // Include all HTML and TypeScript files in src folder
+    "./src/**/*.{html,ts}", // Include Angular component templates
   ],
   theme: {
     extend: {},

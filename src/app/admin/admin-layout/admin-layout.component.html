@@ -1,9 +1,11 @@
-<div class="h-screen flex flex-col">
+<div class="h-screen flex flex-col ">
 
   <!-- Header -->
-  <mat-toolbar class="bg-blue-600 text-white">
-    <app-header></app-header>
-  </mat-toolbar>
+  <div class="bg-blue-600 text-white">
+    <mat-toolbar>
+      <app-header></app-header>
+    </mat-toolbar>
+  </div>
 
   <div class="flex flex-1">
     <mat-sidenav-container class="w-64 bg-gray-100">
@@ -12,18 +14,15 @@
       </mat-sidenav>
     </mat-sidenav-container>
 
-<!--
-  <aside class="sidebar">
+    <div class="flex-1 p-4 bg-slate-200">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 
-  </aside> -->
-
-  <div class="flex-1 p-4 bg-gray-50">
-    <router-outlet></router-outlet>
+  <!-- Footer -->
+  <div class="bg-gray-700 text-white">
+    <mat-toolbar class="justify-center">
+      <app-footer></app-footer>
+    </mat-toolbar>
   </div>
 </div>
-  <!-- Footer -->
-  <mat-toolbar class="bg-gray-700 text-white justify-center">
-    <app-footer></app-footer>
-  </mat-toolbar>
-</div>
-
