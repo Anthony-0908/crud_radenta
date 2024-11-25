@@ -1,4 +1,4 @@
-<div class="h-screen flex flex-col ">
+<div class="h-screen flex flex-col bg-blue-500">
 
   <!-- Header -->
   <div class="bg-blue-600 text-white">
@@ -7,10 +7,13 @@
     </mat-toolbar>
   </div>
 
-  <div class="flex flex-1">
+  <div class="flex flex-1 bg-blue-500">
     <mat-sidenav-container class="w-64 bg-gray-100">
-      <mat-sidenav mode="side" opened class="h-full">
-        <app-side-navbar></app-side-navbar>
+      <mat-sidenav mode="side" opened class="h-full w-64 bg-blue-500 text-black">
+        <div class="bg-blue-600">
+          <app-side-navbar></app-side-navbar>
+        </div>
+
       </mat-sidenav>
     </mat-sidenav-container>
 

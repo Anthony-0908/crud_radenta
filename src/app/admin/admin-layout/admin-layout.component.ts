@@ -19,7 +19,7 @@ import { SideNavbarComponent } from '../component/layout/side-navbar/side-navbar
 })
 export class AdminLayoutComponent {
   @ViewChild(FooterComponent) footerComponent!: FooterComponent;
-  @ViewChild(HeaderComponent) headerComponent!: FooterComponent;
-  @ViewChild(SideNavbarComponent) sidenavbarComponent!: FooterComponent;
+  @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
+  @ViewChild(SideNavbarComponent) sidenavbarComponent!: SideNavbarComponent;
 
 }

@@ -25,6 +25,7 @@ import { NgModule } from '@angular/core';
     MatToolbarModule,
     MatGridListModule,
     MatSidenavModule,
+    MatFormFieldModule
   ],
   exports: [
     MatButtonModule,
@@ -37,7 +38,8 @@ import { NgModule } from '@angular/core';
     MatPaginatorModule,
     MatToolbarModule,
     MatGridListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatFormFieldModule,
   ],
 })
 export class MaterialModule { }

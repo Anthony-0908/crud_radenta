@@ -50,8 +50,14 @@
             },
             "development": {
               "optimization": false,
-              "extractLicenses": false,
+              "outputHashing": "none",
               "sourceMap": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": false,
+              "statsJson": false,
+              "progress": true,
+
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
