@@ -9,5 +9,9 @@ import { MaterialModule } from '../../../../module/material/material.module';
   styleUrl: './side-navbar.component.css'
 })
 export class SideNavbarComponent {
+  isOpened = true; // Sidenav starts opened
 
+  toggleSidenav() {
+    this.isOpened = !this.isOpened;
+  }
 }

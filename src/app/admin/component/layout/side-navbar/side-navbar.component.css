@@ -1,0 +1,32 @@
+.sidenav-container {
+  height: 100vh; /* Full height */
+}
+
+.custom-sidenav {
+  background-color: grey;
+  color: white;
+  width: 250px; /* Expanded width */
+  transition: width 0.3s ease;
+}
+
+.custom-sidenav.closed {
+  width: 0; /* Collapsed width */
+  overflow: hidden; /* Hide content when collapsed */
+}
+
+.sidenav-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2; /* Ensure it stays above the sidenav */
+}
+
+.main-content {
+  padding: 16px;
+}
