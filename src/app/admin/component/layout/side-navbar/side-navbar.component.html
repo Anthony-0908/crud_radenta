@@ -28,15 +28,15 @@
 
   </mat-sidenav-content>
 </mat-sidenav-container> -->
+<mat-toolbar color="primary" class="toolbar">
+  <button mat-icon-button (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+</mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container">
   <!-- Toolbar -->
-  <mat-toolbar color="primary" class="toolbar">
-    <button mat-icon-button (click)="toggleSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My Application</span>
-  </mat-toolbar>
 
   <!-- Side Navigation -->
   <mat-sidenav #sidenav mode="side" [(opened)]="opened">
