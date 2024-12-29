@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { MaterialModule } from '../../../../module/material/material.module';
-
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-side-navbar',
   standalone: true,
-  imports: [MaterialModule],
+  imports: [MaterialModule,RouterOutlet],
   templateUrl: './side-navbar.component.html',
   styleUrl: './side-navbar.component.css'
 })
 export class SideNavbarComponent {
-  isOpened = true; // Sidenav starts opened
+  opened = true; // Sidenav starts opened
 
   toggleSidenav() {
-    this.isOpened = !this.isOpened;
+    this.opened = !this.opened;
   }
 }
+

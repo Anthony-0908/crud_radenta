@@ -1,0 +1,11 @@
+mat-toolbar {
+  height: 64px; /* Ensure consistent toolbar height */
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 64px); /* Full height minus toolbar height */
+}
+
+mat-sidenav {
+  min-width: 250px; /* Ensure a proper sidenav width */
+}

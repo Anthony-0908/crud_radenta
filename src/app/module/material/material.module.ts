@@ -10,6 +10,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NgModule } from '@angular/core';
     MatToolbarModule,
     MatGridListModule,
     MatSidenavModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatListModule
   ],
   exports: [
     MatButtonModule,
@@ -40,6 +42,7 @@ import { NgModule } from '@angular/core';
     MatGridListModule,
     MatSidenavModule,
     MatFormFieldModule,
+    MatListModule
   ],
 })
 export class MaterialModule { }

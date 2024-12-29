@@ -7,15 +7,16 @@
     </mat-toolbar>
   </div>
 
-  <div class="flex flex-1 bg-blue-500">
-    <mat-sidenav-container class="w-64 bg-gray-100">
-      <mat-sidenav mode="side" opened class="h-full w-64 bg-blue-500 text-black">
-        <div class="bg-blue-600">
-          <app-side-navbar></app-side-navbar>
-        </div>
-
-      </mat-sidenav>
-    </mat-sidenav-container>
+  <div class="relative flex">
+    <!-- Sidebar -->
+    <div
+      class="fixed top-0 left-0 h-full w-64 bg-blue-500 text-black transform transition-transform duration-300"
+      x-data="{ open: true }"
+      :class="{ '-translate-x-full': !open }">
+      <div class="bg-blue-600 h-full">
+        <app-side-navbar></app-side-navbar>
+      </div>
+    </div>
 
     <div class="flex-1 p-4 bg-slate-200">
       <router-outlet></router-outlet>

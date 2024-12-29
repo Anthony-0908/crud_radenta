@@ -1,17 +1,17 @@
-.sidenav-container {
-  height: 100vh; /* Full height */
+/* .sidenav-container {
+  height: 100vh;
 }
 
 .custom-sidenav {
   background-color: grey;
   color: white;
-  width: 250px; /* Expanded width */
+  width: 250px;
   transition: width 0.3s ease;
 }
 
 .custom-sidenav.closed {
-  width: 0; /* Collapsed width */
-  overflow: hidden; /* Hide content when collapsed */
+  width: 0;
+  overflow: hidden;
 }
 
 .sidenav-header {
@@ -24,9 +24,41 @@
   position: absolute;
   top: 8px;
   left: 8px;
-  z-index: 2; /* Ensure it stays above the sidenav */
+  z-index: 2;
 }
 
 .main-content {
+  padding: 16px;
+} */
+
+
+.sidenav-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-sidenav-content {
+  margin-top: 64px; /* Height of the toolbar */
+}
+
+
+.toolbar {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+/*
+mat-sidenav-content {
+  margin-top: 64px;
+  padding: 16px;
+} */
+
+.content {
   padding: 16px;
 }
