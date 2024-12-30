@@ -8,7 +8,7 @@ import { Product } from '../shared/core/model/product';
 })
 export class ProductService {
   private apiUrl = "http://localhost:5115/api/Product";
-
+ 
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {

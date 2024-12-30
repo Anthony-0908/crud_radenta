@@ -1,0 +1,45 @@
+<div class="h-screen flex items-center justify-center bg-gray-200">
+  <div class="bg-white p-8 rounded-lg shadow-md w-96">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your email" type="email" formControlName="email" required>
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="email?.hasError('email') && !email?.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="email?.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-6">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Enter your password" type="password" formControlName="password" required>
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-error *ngIf="password?.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="flex items-center justify-between mb-6">
+        <mat-checkbox formControlName="rememberMe">Check me!</mat-checkbox>
+        <a href="#" class="text-blue-500 hover:underline">Forgot Password?</a>
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" class="w-full">
+        Login
+      </button>
+    </form>
+
+    <div class="mt-4 text-center">
+      Don't have an account? <a href="#" class="text-blue-500 hover:underline">Sign Up</a>
+    </div>
+  </div>
+</div>

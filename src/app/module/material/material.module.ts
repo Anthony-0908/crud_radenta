@@ -12,6 +12,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NgModule } from '@angular/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatError } from '@angular/material/form-field';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { NgModule } from '@angular/core';
     MatGridListModule,
     MatSidenavModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule,
+    MatError,
   ],
   exports: [
     MatButtonModule,
@@ -42,7 +46,9 @@ import { NgModule } from '@angular/core';
     MatGridListModule,
     MatSidenavModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule,
+    MatError,
   ],
 })
 export class MaterialModule { }

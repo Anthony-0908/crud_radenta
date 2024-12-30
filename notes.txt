@@ -1,4 +1,8 @@
 ng g environment for environment
-
+ng g c - component
+ng g m - module
+ng g s - service
+ng g i -interface
+ng g c -class 
 
 
